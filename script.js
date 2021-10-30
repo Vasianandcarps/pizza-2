@@ -1,23 +1,18 @@
-let orders = ["1", "2"];
-let str = "Your order:";
-function orderingPizza(...orders) {
-  let sum = 0;
-  for (let i = 0; i < orders.length; i++) {
-    switch (orders[i]) {
-      case "1":
-        str += "Pizza with mushrooms";
-        break;
-      case "2":
-        str += "Pizza with chicken and pinapple";
-        break;
-      default:
-        alert("Try again");
-    }
-    sum += 1;
+let n = prompt("Number of pizzas");
+n -= 1;
+let order = prompt("Your order");
+function orderingPizza(order, n) {
+  let pizzas = ["Pizza with mushrooms", "Pizza with chicken and pinapple"];
+  let str = "Your order:";
+  if (n == 0) {
+    str += pizzas[order] + " " + 2;
+    alert(str);
+  } else if (isNaN(n) || isNaN(order)) {
+    alert("input number");
+  } else {
+    n += 1;
+    str += pizzas[order] + " " + n;
+    alert(str);
   }
-  str += " " + sum;
-  return str;
 }
-
-let order = prompt("order");
-document.write(orderingPizza(order, order));
+orderingPizza(order, n);
