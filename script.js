@@ -11,7 +11,7 @@ function orderingPizza(order, n) {
       str += pizzas[order] + " " + 1;
       alert(str);
     }
-  } else if (isNaN(n) || isNaN(order)) {
+  } else if (isNaN(n) || isNaN(order) || order > 1) {
     alert("input number");
   } else {
     str += pizzas[order] + " " + n;
